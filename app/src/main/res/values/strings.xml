@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Toast</string>
+    <string name="resume">onResume</string>
+    <string name="restart">onRestart</string>
+    <string name="stop">onStop</string>
+    <string name="destroy">onDestroy</string>
+    <string name="restoreInstanceState">onRestoreInstanceState</string>
+    <string name="saveInstanceState">onSaveInstanceState</string>
+</resources>
