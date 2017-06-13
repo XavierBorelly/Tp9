@@ -10,13 +10,13 @@ import android.widget.Toast;
 public class Traceur extends AppCompatActivity {
 
 
-    private int incrément =0;
+    private Point number = new Point();
 
     public void onIncrement (View view)
     {
-        incrément++;
+        number.increment();
         TextView compteur = (TextView) findViewById(R.id.compteur);
-        compteur.setText(incrément + "");
+        compteur.setText(number.getCompteur() + "");
     }
 
     @Override
@@ -59,12 +59,11 @@ public class Traceur extends AppCompatActivity {
         Toast toast = Toast.makeText(this, R.string.restoreInstanceState, Toast.LENGTH_LONG);
         toast.show();
 
-
-        incrément = savedInstanceState.getInt("progress", 0);
+        number = ,savedInstanceState.getParcelable("sauv");
 
 
         TextView compteur = (TextView) findViewById(R.id.compteur);
-        compteur.setText(incrément + "");
+        compteur.setText(number.getCompteur() + "");
     }
 
     @Override
@@ -73,6 +72,6 @@ public class Traceur extends AppCompatActivity {
         Toast toast = Toast.makeText(this, R.string.saveInstanceState, Toast.LENGTH_LONG);
         toast.show();
 
-        outState.putInt("progress", incrément);
+        outState.putParcelable("sauv", number);
     }
 }
